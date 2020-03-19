@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <script>
+        //Your JavaScript goes here!
+
+
+function game() {
+let player = playerPlay();
+let computer = computerPlay();
+let result = thePlay(player, computer);
+return result;
+}
+
+
+
+function playerPlay(){
+    let playerMove=prompt('What is your move?', 'Rock/Paper/Scissors');
+    let playerSelection = playerMove.toLowerCase();
+    return (playerSelection);
+    }
+
+
+
+function computerPlay(){
+    let move = ['rock', 'paper', 'scissors'];
+    let computerSelection = move[Math.floor(Math.random()*move.length)];
+    return (computerSelection);
+   }
+
+
+
+
+function thePlay(playerSelection, computerSelection){
+if (playerSelection === "rock" && computerSelection === "scissors") {
+    return ("You Win, " + playerSelection + " beats " + computerSelection)
+    }
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
+    return ("You Win, " + playerSelection + " beats " + computerSelection)
+}
+    else if (playerSelection === "paper" && computerSelection === "rock") {
+    return ("You Win, " + playerSelection + " beats " + computerSelection)
+    }
+    else if (playerSelection === computerSelection) {
+    return ("It's a draw")}
+
+    else if (computerSelection === "scissors" && playerSelection === "paper") {
+    return ("You Lose, " + computerSelection + " beats " + playerSelection)
+}
+    else if (computerSelection === "paper" && playerSelection === "rock") {
+    return ("You Lose, " + computerSelection + " beats " + playerSelection)
+    }
+    else if (computerSelection === "paper" && playerSelection === "rock") {
+    return ("You Lose, " + computerSelection + " beats " + playerSelection)
+    }
+    else {
+    return ("This is not a valid move");
+    }
+}
+
+
+    </script>
+</body>
+</html>
